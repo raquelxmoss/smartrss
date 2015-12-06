@@ -4,12 +4,21 @@ class User < ActiveRecord::Base
 	has_many :feeds
 
 	validates :name, presence: true
-	validates :email, presence: true
+	validates :email, presence: true, uniqueness: true
+	validates :encrypted_password, length: { in: 6..20 }
+	validate :validate_email_format!
 
 	before_create :encrypt_password!
-	before_create :normalize_email
+	before_create :normalize_email!
 
-	def normalize_email
+
+	def validate_email_format!
+		unless self.email =~ /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+			errors.add(:email, "appears to be invalid")
+		end
+	end
+
+	def normalize_email!
 		self.email = self.email.downcase
 	end
 
