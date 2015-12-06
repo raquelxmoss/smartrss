@@ -10,7 +10,8 @@ gem 'sinatra-contrib'
 
 gem 'activesupport'
 gem 'activerecord'
-gem 'devise'
+gem 'scrypt'
+
 
 gem 'rake'
 
