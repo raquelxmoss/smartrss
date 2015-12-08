@@ -11,7 +11,8 @@ gem 'sinatra-contrib'
 gem 'activesupport'
 gem 'activerecord'
 gem 'scrypt'
-
+gem 'haml'
+gem 'feedjira'
 
 gem 'rake'
 
@@ -27,4 +28,5 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
+  gem 'pry'
 end
