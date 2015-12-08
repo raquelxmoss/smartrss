@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :email, presence: true, uniqueness: true
-	validates :encrypted_password, length: { in: 6..20 }
+	# validates :encrypted_password, length: { in: 6..20 }
 	validate :validate_email_format!
 
-	before_create :encrypt_password!
+	# before_create :encrypt_password!
 	before_create :normalize_email!
 
 
