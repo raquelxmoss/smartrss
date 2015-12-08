@@ -1,0 +1,12 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %link{:href => "/css/normalize.css", :rel => "stylesheet"}/
+    %link{:href => "/css/application.css", :rel => "stylesheet"}/
+    %script{:src => "/js/application.js"}
+    %title SmartRss
+  %body
+    .container
+      %h1 SmartRss
+      = "Hi #{@current_user.name}" if current_user?
+      = yield
