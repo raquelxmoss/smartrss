@@ -7,15 +7,12 @@ gem 'pg'
 gem 'rack', '1.5.2'
 gem 'sinatra'
 gem 'sinatra-contrib'
-
 gem 'activesupport'
 gem 'activerecord'
 gem 'scrypt'
 gem 'haml'
 gem 'feedjira'
-
 gem 'rake'
-
 gem 'shotgun'
 
 group :test do
