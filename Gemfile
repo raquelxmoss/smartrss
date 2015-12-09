@@ -14,6 +14,7 @@ gem 'scrypt'
 gem 'haml'
 gem 'feedjira'
 
+gem 'pry'
 gem 'rake'
 
 gem 'shotgun'
@@ -28,5 +29,4 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
-  gem 'pry'
 end
