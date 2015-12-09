@@ -1,7 +1,10 @@
 require 'scrypt'
 
 class User < ActiveRecord::Base
-	has_many :feeds
+	has_many :feed_subscriptions
+	has_many :feeds, through: :feed_subscriptions
+	has_many :articles, through: :feeds
+	has_many :user_article_states
 
 	validates :name, presence: true
 	validates :email, presence: true, uniqueness: true
