@@ -8,5 +8,5 @@
   %body
     .container
       %h1 SmartRss
-      = "Hi #{@current_user.name}" if current_user?
+      = "Hi #{@current_user.name}" if current_user
       = yield
