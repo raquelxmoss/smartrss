@@ -2,9 +2,9 @@ enable :sessions
 require 'feedjira'
 
 post '/feeds/new' do
-  feed = Feed.new(user_id: session[:user_id], url: params[:url])
-  if feed.save
-    redirect to '/'
+  if feed = Feed.add_new(params[:url])
+    current_user.feeds << feed
+    redirect to '/feeds'
   else
     redirect to '/'
   end
