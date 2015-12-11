@@ -1,3 +1,4 @@
 - @feeds.each do |f|
   %li
-    %p= f.title
+    %p
+      %a{title: f.title, href: "/feeds/#{f.id}"} #{f.title}

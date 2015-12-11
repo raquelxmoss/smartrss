@@ -14,3 +14,7 @@ get '/feeds' do
   @feeds = current_user.feeds
   haml :'feeds/index'
 end
+
+get '/feeds/:id' do
+  @articles = current_user
+end
