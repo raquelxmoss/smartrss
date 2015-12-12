@@ -6,3 +6,6 @@
       %p= article.content
     - else
       %p= article.summary
+    %form{ action: "/articles/#{article.id}/mark-as-read", method:"post"}
+      %input{ type: 'hidden', name:'_method', value:'put'}
+      %input{ type: 'submit', value: 'Mark as Read' }

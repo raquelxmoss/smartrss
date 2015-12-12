@@ -4,6 +4,7 @@ require 'feedjira'
 post '/feeds/new' do
   if feed = Feed.add_new(params[:url])
     current_user.feeds << feed
+    create_initial_user_article_states(current_user, feed)
     redirect to '/feeds'
   else
     redirect to '/'
