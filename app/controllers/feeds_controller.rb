@@ -16,5 +16,6 @@ get '/feeds' do
 end
 
 get '/feeds/:id' do
-  @articles = current_user
+  @feed = Feed.find(params[:id])
+  haml :'feeds/show'
 end
