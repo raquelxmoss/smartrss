@@ -1,0 +1,8 @@
+%h2= @feed.title
+.entries
+  - @feed.articles.each do |article|
+    %h3= article.title
+    - if article.content
+      %p= article.content
+    - else
+      %p= article.summary
