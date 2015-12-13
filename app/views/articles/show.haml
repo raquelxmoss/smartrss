@@ -1,0 +1,7 @@
+- @articles.each do |article|
+  .article
+    %h3= article.title
+    - if article.content
+      %p= article.content
+    - else
+      %p= article.summary

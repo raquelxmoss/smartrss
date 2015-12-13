@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   # before_create :encrypt_password!
   before_create :normalize_email!
 
-
   def validate_email_format!
     unless self.email =~ /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
       errors.add(:email, "appears to be invalid")
