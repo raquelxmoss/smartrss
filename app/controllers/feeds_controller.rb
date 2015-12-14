@@ -12,7 +12,7 @@ post '/feeds/new' do
 end
 
 get '/feeds' do
-  @feeds = current_user.feeds
+  @feeds = apply_feed_subscription_rules(current_user.feed_subscriptions)
   haml :'feeds/index'
 end
 

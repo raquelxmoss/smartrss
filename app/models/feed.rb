@@ -28,4 +28,14 @@ class Feed < ActiveRecord::Base
   def self.get_feed(url)
     Feedjira::Feed.fetch_and_parse(url)
   end
+
+  def ignore_phrases(phrases)
+    articles.each do |a|
+      phrases.each do |phrase| 
+        a.destroy if a.content =~ /\#{phrase}\/i/
+        a.destroy if a.summary =~ /\#{phrase}\/i/
+        a.destroy if a.title =~ /\#{phrase}\/i/
+      end
+    end
+  end
 end
